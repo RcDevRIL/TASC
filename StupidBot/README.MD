@@ -1,4 +1,4 @@
-# Project Title
+# StupidBot v0.01
 
 Welcome in StupidBot development repository!! 
 
