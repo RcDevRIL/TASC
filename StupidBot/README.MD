@@ -87,8 +87,8 @@ La version est inscrite dans le titre de ce document.
 
 * **LADOUCE Fabien** - *Main contributor* - [LadouceFabien](https://github.com/LadouceFabien)
 
-Voir aussi la liste des contributeurs : [contributors](https://github.com/RcDevRIL/TASC/graphs/contributors) 
+Voir aussi la liste des contributeurs : [StupidBot - Contributeur](https://github.com/RcDevRIL/TASC/graphs/contributors) 
 
 ## Licence
 
-Ce projet est sous la licence GNU GENERAL PUBLIC LICENSE- voir le [LICENSE.md](LICENSE.md) pour les détails
+Ce projet est sous la licence GNU GENERAL PUBLIC LICENSE- voir le [LICENSE.md](https://github.com/RcDevRIL/TASC/blob/master/LICENSE) pour les détails
