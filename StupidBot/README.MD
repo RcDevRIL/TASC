@@ -87,7 +87,7 @@ La version est inscrite dans le titre de ce document.
 
 * **LADOUCE Fabien** - *Main contributor* - [LadouceFabien](https://github.com/LadouceFabien)
 
-Voir aussi la liste des contributeurs : [StupidBot - Contributeur](https://github.com/RcDevRIL/TASC/graphs/contributors) 
+Voir aussi la liste des contributeurs : [StupidBot - Contributeurs](https://github.com/RcDevRIL/TASC/graphs/contributors) 
 
 ## Licence
 
