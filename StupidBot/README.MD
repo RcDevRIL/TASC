@@ -1,24 +1,31 @@
 # StupidBot v0.01
 
-Welcome in StupidBot development repository!! 
+Bienvenue sur le répertoire de développement de StupidBot !! 
 
-Distributed by TASC (THE AMAZING STUPID COMPANY)
+Distribué par TASC (THE AMAZING STUPID COMPANY)
 
-A Dijon-Quetigny CESI school story.
+Une histoire du CESI - Dijon/Quetigny.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Ces instructions vont vous permettre d'avoir une copie du projet et de le faire tourner sur votre machine locale à des fins de développement ou de test. 
 
-### Prerequisites
+Voir le paragraphe Déploiement pour savoir comment déployer le projet.
 
-What things you need to install the software and how to install them
+### Pré-requis
+
+Voici la liste :
+	1- 
+	2- 
+Installation :
+	1-
+	2-
 
 ```
 Give examples
 ```
 
-### Installing
+### Installation
 
 A step by step series of examples that tell you how to get a development env running
 
@@ -36,7 +43,7 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
+## Faire tourner les tests...
 
 Explain how to run the automated tests for this system
 
@@ -56,36 +63,32 @@ Explain what these tests test and why
 Give an example
 ```
 
-## Deployment
+## Déploiement
 
 Add additional notes about how to deploy this on a live system
 
-## Built With
+## Construit avec
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [C#](https://docs.microsoft.com/fr-fr/dotnet/csharp/) - The C# language using .NET framework
 
-## Contributing
+## Contributions
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Pour contribuer au projet, veuillez envoyer un email à romain.chevallier@viacesi.fr
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+La version est inscrite dans le titre de ce document.
 
-## Authors
+## Auteurs
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **CHEVALLIER Romain** - *Main contributor* - [RcDevRIL](https://github.com/RcDevRIL)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **BOREL Lucas** - *Main contributor* - [Wdesoraner](https://github.com/Wdesoraner)
 
-## License
+* **LADOUCE Fabien** - *Main contributor* - [LadouceFabien](https://github.com/LadouceFabien)
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+Voir aussi la liste des contributeurs : [contributors](https://github.com/RcDevRIL/TASC/graphs/contributors) 
 
-## Acknowledgments
+## Licence
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+Ce projet est sous la licence GNU GENERAL PUBLIC LICENSE- voir le [LICENSE.md](LICENSE.md) pour les détails
