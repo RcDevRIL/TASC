@@ -7,9 +7,33 @@ namespace StupidBot_Test
     public class UnitTest_Bot
     {
         [TestMethod]
-        public void TestMethod1()
+        public void ReadAndAnswer()
+        {
+
+        }
+
+        [TestMethod]
+        public void AddEntry()
         {
             
+        }
+
+        [TestMethod]
+        public void LoadGif()
+        {
+
+        }
+
+        [TestMethod]
+        public void nomtest3()
+        {
+
+        }
+
+        [TestMethod]
+        public void nomtest4()
+        {
+
         }
     }
 }
