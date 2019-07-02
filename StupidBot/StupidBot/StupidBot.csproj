@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\StupidException.cs" />
     <Compile Include="Views\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,7 +110,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\TASC_LOGO.png" />
