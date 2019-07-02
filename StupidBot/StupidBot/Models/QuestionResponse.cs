@@ -13,7 +13,8 @@ namespace StupidBot.Models
 
     public class QuestionResponse
     {
-        private string jsonPath = "C:/code/TASC/StupidBot/StupidBot/Resources/QuestionReponse.json";
+        //private string jsonPath = "C:/code/TASC/StupidBot/StupidBot/Resources/QuestionReponse.json";
+        private string jsonPath = @"Resources/QuestionReponse.json";
         public string Question { get; set; }
         public string Reponse { get; set; }
 
