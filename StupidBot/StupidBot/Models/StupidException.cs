@@ -21,9 +21,14 @@ namespace StupidBot.Models
             errorTime = DateTime.Now;
         }
 
+        public StupidException(string message, Exception inner) : base(message, inner)
+        {
+            errorTime = DateTime.Now;
+        }
+
         public void displayError(StupidException ex)
         {
-            Console.WriteLine(ex.StackTrace);
+            Log.StupidLogger.Error(ex.GetType() + " " + ex.Message + " " + ex.StackTrace);
         }
     }
 }
