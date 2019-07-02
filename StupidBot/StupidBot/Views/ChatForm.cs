@@ -12,12 +12,27 @@ namespace StupidBot.Views
 {
     public partial class ChatForm : Form
     {
-        public ChatForm()
+        MainMenu mainForm;
+        public ChatForm(MainMenu mainForm)
         {
             InitializeComponent();
+            this.mainForm = mainForm;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.mainForm.Show();
+            this.Close();
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            String textSend = textBoxSend.Text;
+            listViewChat.Items.Add(textSend);
+            textBoxSend.Clear();
+        }
+
+        private void textBoxSend_TextChanged(object sender, EventArgs e)
         {
 
         }

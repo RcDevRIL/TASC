@@ -50,6 +50,7 @@
             this.btnExit.TabIndex = 1;
             this.btnExit.Text = "Quitter";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnDeleteThis
             // 

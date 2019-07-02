@@ -12,9 +12,19 @@ namespace StupidBot.Views
 {
     public partial class AdminForm : Form
     {
-        public AdminForm()
+
+        MainMenu mainMenu;
+
+        public AdminForm(MainMenu mainMenu)
         {
             InitializeComponent();
+            this.mainMenu = mainMenu;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            mainMenu.Show();
+            this.Close();
         }
     }
 }
