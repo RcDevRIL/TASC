@@ -25,9 +25,7 @@ namespace StupidBot
         static void Main()
         {
             Application.EnableVisualStyles();
-            Log.StupidLogger.Debug("EnableVisualStyles");
             Application.SetCompatibleTextRenderingDefault(false);
-            Log.StupidLogger.Debug("SetCompatibleTextRenderingDefault");
             Application.Run(new MainMenu());
         }
     }
