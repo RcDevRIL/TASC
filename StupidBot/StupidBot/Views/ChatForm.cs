@@ -30,6 +30,7 @@ namespace StupidBot.Views
             String textSend = textBoxSend.Text;
             listViewChat.Items.Add(textSend);
             textBoxSend.Clear();
+            Log.StupidLogger.Info("Vous avez bien envoyer le message !! youpiiiii");
         }
 
         private void textBoxSend_TextChanged(object sender, EventArgs e)
