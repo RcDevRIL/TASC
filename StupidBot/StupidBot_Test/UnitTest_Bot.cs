@@ -56,7 +56,7 @@ namespace StupidBot_Test
             test.DeleteResponse("test to add", "response added");
 
             string newResponse = test.GetResponse("test to add");
-            Assert.IsTrue(newResponse == "Je ne saisi pas vous insinuation...");
+            Assert.IsTrue(newResponse == "Je ne saisi pas vos insinuations...");
         }
 
         [TestMethod]

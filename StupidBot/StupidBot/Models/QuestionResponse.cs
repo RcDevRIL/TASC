@@ -1,8 +1,10 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,7 +13,7 @@ namespace StupidBot.Models
 
     public class QuestionResponse
     {
-        private string jsonPath = "D:/Code/CESi/Projet_Informatique/TASC/StupidBot/StupidBot/Resources/QuestionReponse.json";
+        private string jsonPath = "C:/code/TASC/StupidBot/StupidBot/Resources/QuestionReponse.json";
         public string Question { get; set; }
         public string Reponse { get; set; }
 
@@ -36,7 +38,7 @@ namespace StupidBot.Models
             List<QuestionResponse> list = FindAllQuestionsResponses();
             List<QuestionResponse> reponses = list.Where(q => q.Question == question).ToList();
 
-            string reponse = "Je ne saisi pas vous insinuation...";
+            string reponse = "Je ne saisi pas vos insinuations...";
 
             if (reponses.Count == 1)
             {
