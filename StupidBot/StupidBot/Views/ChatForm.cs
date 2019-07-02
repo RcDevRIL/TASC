@@ -38,19 +38,6 @@ namespace StupidBot.Views
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            bool[] H = new bool[5] { true, false, true, false, true };
-            try
-            {
-                H[6] = true; throw new StupidException();
-            } catch (StupidException ex)
-            {
-                ex.displayError(ex);
-            }
-            
-        }
     }
 }
 

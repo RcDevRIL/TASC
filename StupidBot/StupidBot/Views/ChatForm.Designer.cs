@@ -33,8 +33,6 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.listViewChat = new System.Windows.Forms.ListView();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxSend
@@ -81,28 +79,6 @@
             this.listViewChat.TabIndex = 5;
             this.listViewChat.UseCompatibleStateImageBehavior = false;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(299, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Crash";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(299, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Crash";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // ChatForm
             // 
             this.AcceptButton = this.btnSend;
@@ -110,7 +86,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(413, 416);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.listViewChat);
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.btnExit);
@@ -130,6 +105,5 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.ListView listViewChat;
-        private System.Windows.Forms.Button button1;
     }
 }

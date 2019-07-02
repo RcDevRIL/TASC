@@ -33,8 +33,8 @@
             this.labelReponse = new System.Windows.Forms.Label();
             this.buttonValid = new System.Windows.Forms.Button();
             this.buttonQuit = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxQuestion = new System.Windows.Forms.TextBox();
+            this.textBoxReponse = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -85,28 +85,28 @@
             this.buttonQuit.UseVisualStyleBackColor = true;
             this.buttonQuit.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox1
+            // textBoxQuestion
             // 
-            this.textBox1.Location = new System.Drawing.Point(34, 116);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxQuestion.Location = new System.Drawing.Point(34, 116);
+            this.textBoxQuestion.Name = "textBoxQuestion";
+            this.textBoxQuestion.Size = new System.Drawing.Size(100, 20);
+            this.textBoxQuestion.TabIndex = 5;
+            this.textBoxQuestion.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // textBoxReponse
             // 
-            this.textBox2.Location = new System.Drawing.Point(34, 181);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 6;
+            this.textBoxReponse.Location = new System.Drawing.Point(34, 181);
+            this.textBoxReponse.Name = "textBoxReponse";
+            this.textBoxReponse.Size = new System.Drawing.Size(100, 20);
+            this.textBoxReponse.TabIndex = 6;
             // 
             // ContributionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(365, 331);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxReponse);
+            this.Controls.Add(this.textBoxQuestion);
             this.Controls.Add(this.buttonQuit);
             this.Controls.Add(this.buttonValid);
             this.Controls.Add(this.labelReponse);
@@ -126,7 +126,7 @@
         private System.Windows.Forms.Label labelReponse;
         private System.Windows.Forms.Button buttonValid;
         private System.Windows.Forms.Button buttonQuit;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxQuestion;
+        private System.Windows.Forms.TextBox textBoxReponse;
     }
 }
