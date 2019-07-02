@@ -37,9 +37,14 @@ namespace StupidBot.Models
         public string GetResponse(string question)
         {
             List<QuestionResponse> list = FindAllQuestionsResponses();
-            List<QuestionResponse> reponses = list.Where(q => q.Question == question).ToList();
+            List<QuestionResponse> reponses = list.Where(q => q.Question.ToLower() == question.ToLower()).ToList();
 
             string reponse = "Je ne saisi pas vos insinuations...";
+
+            if (reponses.Count == 0)
+            {
+                //AddQuestion(question);
+            }
 
             if (reponses.Count == 1)
             {
@@ -55,7 +60,30 @@ namespace StupidBot.Models
             return reponse;
         }
 
-        public void AddResponse(string question, string reponse)
+        //public void AddQuestion(string question)
+        //{
+        //    var list = FindAllQuestionsResponses();
+
+        //    list.Add(new QuestionResponse(question, ""));
+        //    var convertedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
+
+        //    File.WriteAllText(jsonPath, convertedJson);
+
+        //}
+
+        //public void ModifyResponse(string question, string reponse)
+        //{
+        //    QuestionResponse questionResponse = FindAllQuestionsResponses().Where(q => q.Question == question).Where(r => r.Reponse == "").First();
+
+        //    questionResponse.Reponse = reponse;
+
+        //    //list.Add(new QuestionResponse(question, reponse));
+        //    var convertedJson = JsonConvert.SerializeObject(questionResponse, Formatting.Indented);
+
+        //    File.WriteAllText(jsonPath, convertedJson);
+
+        //}
+        public void AddQuestionResponse(string question, string reponse)
         {
             var list = FindAllQuestionsResponses();
 
@@ -70,7 +98,7 @@ namespace StupidBot.Models
         {
             var list = FindAllQuestionsResponses();
             QuestionResponse questionResponse = list.Where(q => q.Question == question).Where(r => r.Reponse == reponse).FirstOrDefault();
-            list.RemoveAll(l=>l.Question == questionResponse.Question && l.Reponse == questionResponse.Reponse);
+            list.RemoveAll(l => l.Question == questionResponse.Question && l.Reponse == questionResponse.Reponse);
             var convertedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
 
             File.WriteAllText(jsonPath, convertedJson);

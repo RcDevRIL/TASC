@@ -31,10 +31,8 @@
             this.textBoxSend = new System.Windows.Forms.TextBox();
             this.btnSend = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.listViewChat = new System.Windows.Forms.ListView();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.button1 = new System.Windows.Forms.Button();
+            this.listViewChat = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // textBoxSend
@@ -66,21 +64,6 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(378, 36);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 328);
-            this.vScrollBar1.TabIndex = 4;
-            // 
-            // listViewChat
-            // 
-            this.listViewChat.Location = new System.Drawing.Point(13, 36);
-            this.listViewChat.Name = "listViewChat";
-            this.listViewChat.Size = new System.Drawing.Size(362, 328);
-            this.listViewChat.TabIndex = 5;
-            this.listViewChat.UseCompatibleStateImageBehavior = false;
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Red;
@@ -93,15 +76,15 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(299, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Crash";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // listViewChat
+            // 
+            this.listViewChat.AutoScroll = true;
+            this.listViewChat.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.listViewChat.Location = new System.Drawing.Point(13, 42);
+            this.listViewChat.Name = "listViewChat";
+            this.listViewChat.Size = new System.Drawing.Size(361, 336);
+            this.listViewChat.TabIndex = 7;
+            this.listViewChat.WrapContents = false;
             // 
             // ChatForm
             // 
@@ -110,9 +93,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(413, 416);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.listViewChat);
-            this.Controls.Add(this.vScrollBar1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.textBoxSend);
@@ -128,8 +110,7 @@
         private System.Windows.Forms.TextBox textBoxSend;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
-        private System.Windows.Forms.ListView listViewChat;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.FlowLayoutPanel listViewChat;
     }
 }
