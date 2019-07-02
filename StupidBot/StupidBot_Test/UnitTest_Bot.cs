@@ -37,12 +37,44 @@ namespace StupidBot_Test
             Assert.IsTrue(response == "Je suis le grand Manitout");
         }
 
+
+        //[TestMethod]
+        //public void AddQuestion()
+        //{
+        //    string input = "test ajout question";
+
+        //    QuestionResponse test = new QuestionResponse();
+
+        //    test.AddQuestion(input);
+
+        //    string response = test.GetResponse(input);
+
+        //    Assert.IsTrue(response == "");
+        //}
+
+        //[TestMethod]
+        //public void AddResponse()
+        //{
+        //    string input = "test ajout question";
+
+        //    string input2 = "test modif reponse";
+
+        //    QuestionResponse test = new QuestionResponse();
+
+        //    test.ModifyResponse(input, input2);
+
+        //    string response = test.GetResponse(input);
+
+        //    Assert.IsTrue(response == input2);
+
+        //}
+
         [TestMethod]
         public void AddEntry()
         {
             QuestionResponse test = new QuestionResponse();
 
-            test.AddResponse("test to add", "response added");
+            test.AddQuestionResponse("test to add", "response added");
 
             string newResponse = test.GetResponse("test to add");
             Assert.IsTrue(newResponse == "response added");
@@ -69,20 +101,20 @@ namespace StupidBot_Test
 
             if (response == "Je ne saisi pas vos insinuations...")
             {
-                string input2 = "konichawa";
+                string input2 = "konichiwa";
 
-                test.AddResponse(input, input2);
+                test.AddQuestionResponse(input, input2);
             }
 
             string newReponse = test.GetResponse(input);
 
-            Assert.IsTrue(newReponse == "konichawa");
+            Assert.IsTrue(newReponse == "konichiwa");
         }
 
         [TestMethod]
         public void LoadGif()
         {
-
+            
         }
     }
 }
