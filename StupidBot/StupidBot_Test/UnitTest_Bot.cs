@@ -60,6 +60,26 @@ namespace StupidBot_Test
         }
 
         [TestMethod]
+        public void Dialog()
+        {
+            QuestionResponse test = new QuestionResponse();
+            string input = "guten tag";
+
+            string response = test.GetResponse(input);
+
+            if (response == "Je ne saisi pas vos insinuations...")
+            {
+                string input2 = "konichawa";
+
+                test.AddResponse(input, input2);
+            }
+
+            string newReponse = test.GetResponse(input);
+
+            Assert.IsTrue(newReponse == "konichawa");
+        }
+
+        [TestMethod]
         public void LoadGif()
         {
 
