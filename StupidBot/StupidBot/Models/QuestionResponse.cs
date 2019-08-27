@@ -14,7 +14,8 @@ namespace StupidBot.Models
     public class QuestionResponse
     {
         //private string jsonPath = "C:/code/TASC/StupidBot/StupidBot/Resources/QuestionReponse.json";
-        private string jsonPath = @"Resources/QuestionReponse.json";
+        //private string jsonPath = @"Resources/QuestionReponse.json";
+        private string jsonPath = AppDomain.CurrentDomain.BaseDirectory + "/Resources/QuestionReponse.json";
         public string Question { get; set; }
         public string Reponse { get; set; }
 
@@ -57,6 +58,7 @@ namespace StupidBot.Models
 
         public void AddResponse(string question, string reponse)
         {
+            Console.WriteLine(jsonPath);
             var list = FindAllQuestionsResponses();
 
             list.Add(new QuestionResponse(question, reponse));
