@@ -39,13 +39,13 @@
             // 
             this.textBoxSend.Location = new System.Drawing.Point(13, 384);
             this.textBoxSend.Name = "textBoxSend";
-            this.textBoxSend.Size = new System.Drawing.Size(281, 20);
+            this.textBoxSend.Size = new System.Drawing.Size(461, 20);
             this.textBoxSend.TabIndex = 0;
             this.textBoxSend.TextChanged += new System.EventHandler(this.textBoxSend_TextChanged);
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(300, 384);
+            this.btnSend.Location = new System.Drawing.Point(480, 384);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(75, 23);
             this.btnSend.TabIndex = 1;
@@ -68,7 +68,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(299, 13);
+            this.button1.Location = new System.Drawing.Point(480, 7);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 6;
@@ -79,10 +79,11 @@
             // listViewChat
             // 
             this.listViewChat.AutoScroll = true;
+            this.listViewChat.BackColor = System.Drawing.Color.White;
             this.listViewChat.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.listViewChat.Location = new System.Drawing.Point(13, 42);
             this.listViewChat.Name = "listViewChat";
-            this.listViewChat.Size = new System.Drawing.Size(361, 336);
+            this.listViewChat.Size = new System.Drawing.Size(542, 336);
             this.listViewChat.TabIndex = 7;
             this.listViewChat.WrapContents = false;
             // 
@@ -92,7 +93,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
-            this.ClientSize = new System.Drawing.Size(413, 416);
+            this.ClientSize = new System.Drawing.Size(579, 416);
             this.Controls.Add(this.listViewChat);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnExit);

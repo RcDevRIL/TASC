@@ -31,30 +31,64 @@ namespace StupidBot.Views
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            String textSend = textBoxSend.Text;
+            Random rnd = new Random();
+            string textSend = textBoxSend.Text;
 
-            RichTextBox text = new RichTextBox
+            RichTextBox textUser = new RichTextBox
             {
-                Width = 300,
                 Multiline = true,
                 ReadOnly = true,
-                Text = textSend
+                Text = textSend,
+                BackColor = Color.DodgerBlue,
+                ForeColor = Color.White,
+                SelectionAlignment = HorizontalAlignment.Right,
+
             };
-            listViewChat.Controls.Add(text);
+            Size size = TextRenderer.MeasureText(textUser.Text, textUser.Font);
+            textUser.Width = size.Width + 10;
+            textUser.Height = size.Height + 10;
+            //textUser.Location = new Point(listViewChat.Width, 0);
+            //textUser.Anchor = AnchorStyles.None;
+
+            listViewChat.Controls.Add(textUser);
 
             textBoxSend.Clear();
             Log.StupidLogger.Info("Vous avez bien envoyer le message !! youpiiiii");
 
             string response = questionResponse.GetResponse(textSend);
 
-            RichTextBox text2 = new RichTextBox
+
+            int time = rnd.Next(5000, 8000);
+            if (response.Contains(".gif"))
             {
-                Width = 300,
-                Multiline = true,
-                ReadOnly = true,
-                Text = response
-            };
-            listViewChat.Controls.Add(text2);
+                PictureBox pb1 = new PictureBox
+                {
+                    Image = Image.FromFile("Resources/" + response),
+                    MaximumSize = new Size(700, 700),
+                    SizeMode = PictureBoxSizeMode.AutoSize
+                };
+                listViewChat.Controls.Add(pb1);
+                listViewChat.ScrollControlIntoView(pb1);
+            }
+
+            else
+            {
+                RichTextBox textBot = new RichTextBox
+                {
+                    Width = 300,
+                    Multiline = true,
+                    ReadOnly = true,
+                    Text = response,
+                    BackColor = Color.WhiteSmoke,
+                    ForeColor = Color.Black
+                };
+
+                size = TextRenderer.MeasureText(textBot.Text, textBot.Font);
+                textBot.Width = size.Width + 10;
+                textBot.Height = size.Height + 10;
+                listViewChat.Controls.Add(textBot);
+                listViewChat.ScrollControlIntoView(textBot);
+            }
 
         }
 
