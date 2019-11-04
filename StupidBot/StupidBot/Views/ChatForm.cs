@@ -32,11 +32,13 @@ namespace StupidBot.Views
             this.Close();
         }
 
+        //Quand l'utilisateur envoi envoi son texte
         private void btnSend_Click(object sender, EventArgs e)
         {
             String textSend = textBoxSend.Text;
             Random rnd = new Random();
 
+            //on crée un TextBox avec un fond bleu pour les reperer plus facilement
             RichTextBox textUser = new RichTextBox
             {
                 Multiline = true,
@@ -50,20 +52,20 @@ namespace StupidBot.Views
             Size size = TextRenderer.MeasureText(textUser.Text, textUser.Font);
             textUser.Width = size.Width + 10;
             textUser.Height = size.Height + 10;
-            //textUser.Location = new Point(listViewChat.Width, 0);
-            //textUser.Anchor = AnchorStyles.None;
-
+            
+            //On l'ajoute à la liste
             listViewChat.Controls.Add(textUser);
 
+            //On nettoie la zone de texte
             textBoxSend.Clear();
             Log.StupidLogger.Info("Vous avez bien envoyer le message !! youpiiiii");
 
             string response = questionResponse.GetResponse(textSend);
 
-
-            int time = rnd.Next(5000, 8000);
+            //On vérifie si la réponse contient .gif, .wav ou s'il s'agit uniquement d'un texte
             if (response.Contains(".gif"))
             {
+                //On crée une zone pour l'image
                 PictureBox pb1 = new PictureBox
                 {
                     Image = Image.FromFile("Resources/" + response),
@@ -76,6 +78,7 @@ namespace StupidBot.Views
 
             if (response.Contains(".wav"))
             {
+                //On crée une réponse temporaire pour introduire la musique
                 RichTextBox textBot = new RichTextBox
                 {
                     Width = 300,
@@ -93,6 +96,7 @@ namespace StupidBot.Views
                 listViewChat.ScrollControlIntoView(textBot);
                 if (ttsOn) tts.SpeakAsync(textBot.Text);
 
+                //On lance la lecture du fichier wav
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer();
                 player.SoundLocation = "Resources/" + response;
                 player.Play();
@@ -100,6 +104,7 @@ namespace StupidBot.Views
 
             if (!response.Contains(".wav") && !response.Contains(".gif"))
             {
+                //On récupère la réponse en fonction de la question de l'utilisateur
                 RichTextBox textBot = new RichTextBox
                 {
                     Width = 300,
@@ -118,13 +123,6 @@ namespace StupidBot.Views
                 if (ttsOn) tts.SpeakAsync(textBot.Text);
 
             }
-
-
-        }
-
-        private void textBoxSend_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
