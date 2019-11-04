@@ -1,16 +1,12 @@
 ﻿namespace StupidBot
 {
+    /// <author>
+    ///     The Amazing Stupid Company, Inc.
+    /// </author>
     partial class MainMenu
     {
-        /// <summary>
-        /// Variable nécessaire au concepteur.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Nettoyage des ressources utilisées.
-        /// </summary>
-        /// <param name="disposing">true si les ressources managées doivent être supprimées ; sinon, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -42,18 +38,20 @@
             this.BtnAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.BtnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAdmin.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnAdmin.Location = new System.Drawing.Point(110, 36);
+            this.BtnAdmin.Location = new System.Drawing.Point(147, 44);
+            this.BtnAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnAdmin.Name = "BtnAdmin";
-            this.BtnAdmin.Size = new System.Drawing.Size(23, 23);
+            this.BtnAdmin.Size = new System.Drawing.Size(31, 28);
             this.BtnAdmin.TabIndex = 0;
             this.BtnAdmin.UseVisualStyleBackColor = false;
             this.BtnAdmin.Click += new System.EventHandler(this.BtnAdmin_Click);
             // 
             // btnChat
             // 
-            this.btnChat.Location = new System.Drawing.Point(9, 136);
+            this.btnChat.Location = new System.Drawing.Point(12, 167);
+            this.btnChat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChat.Name = "btnChat";
-            this.btnChat.Size = new System.Drawing.Size(124, 45);
+            this.btnChat.Size = new System.Drawing.Size(165, 55);
             this.btnChat.TabIndex = 1;
             this.btnChat.Text = "Parler avec StupidBot";
             this.btnChat.UseVisualStyleBackColor = true;
@@ -61,25 +59,27 @@
             // 
             // btnContribution
             // 
-            this.btnContribution.Location = new System.Drawing.Point(9, 187);
+            this.btnContribution.Location = new System.Drawing.Point(12, 230);
+            this.btnContribution.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnContribution.Name = "btnContribution";
-            this.btnContribution.Size = new System.Drawing.Size(124, 45);
+            this.btnContribution.Size = new System.Drawing.Size(165, 55);
             this.btnContribution.TabIndex = 2;
-            this.btnContribution.Text = "Apprener à StupidBot";
+            this.btnContribution.Text = "Apprendre à StupidBot";
             this.btnContribution.UseVisualStyleBackColor = true;
             this.btnContribution.Click += new System.EventHandler(this.btnContribution_Click);
             // 
             // MainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::StupidBot.Properties.Resources.TASC_LOGO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(627, 450);
+            this.ClientSize = new System.Drawing.Size(836, 554);
             this.Controls.Add(this.btnContribution);
             this.Controls.Add(this.btnChat);
             this.Controls.Add(this.BtnAdmin);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainMenu";
             this.Text = "Form1";
             this.ResumeLayout(false);

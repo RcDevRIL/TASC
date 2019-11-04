@@ -16,16 +16,14 @@ namespace StupidBot.Views
     public partial class ChatForm : Form
     {
         MainMenu mainForm;
-        SpeechSynthesizer tts = new SpeechSynthesizer();
+        SpeechSynthesizer tts;
+        Boolean ttsOn = false;
         QuestionResponse questionResponse = new QuestionResponse();
 
         public ChatForm(MainMenu mainForm)
         {
             InitializeComponent();
             this.mainForm = mainForm;
-            tts.SetOutputToDefaultAudioDevice();
-            tts.Volume = 100;
-            tts.SpeakAsync("C'est l'heure de jouer");
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -93,7 +91,7 @@ namespace StupidBot.Views
                 textBot.Height = size.Height + 10;
                 listViewChat.Controls.Add(textBot);
                 listViewChat.ScrollControlIntoView(textBot);
-                tts.SpeakAsync(textBot.Text);
+                if (ttsOn) tts.SpeakAsync(textBot.Text);
 
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer();
                 player.SoundLocation = "Resources/" + response;
@@ -117,7 +115,7 @@ namespace StupidBot.Views
                 textBot.Height = size.Height + 10;
                 listViewChat.Controls.Add(textBot);
                 listViewChat.ScrollControlIntoView(textBot);
-                tts.SpeakAsync(textBot.Text);
+                if (ttsOn) tts.SpeakAsync(textBot.Text);
 
             }
 
@@ -139,7 +137,27 @@ namespace StupidBot.Views
                 else throw new StupidException();
             } catch(Exception exception)
             {
+                MessageBox.Show("Attention faut pas pousser mémé dans les orties...", "Erreur personnalisée");
                 Log.StupidLogger.Error("CE BOUTON GENERE UNE EXCEPTION! Message d'erreur: "+ exception.Message);
+            }
+        }
+
+        private void tts_On(object sender, EventArgs e)
+        {
+            Log.StupidLogger.Debug(e.ToString());
+            Log.StupidLogger.Debug(sender.ToString());
+            if(sender.ToString().Contains("CheckState: 1"))
+            {
+                tts = new SpeechSynthesizer();
+                tts.SetOutputToDefaultAudioDevice();
+                tts.Volume = 100;
+                tts.SpeakAsync("C'est l'heure de jouer");
+                ttsOn = true;
+
+            } else
+            {
+                ttsOn = false;
+                tts.Dispose();
             }
         }
     }
