@@ -6,14 +6,20 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Speech.Synthesis;
 
 namespace StupidBot.Views
 {
     public partial class ChatForm : Form
     {
         MainMenu mainForm;
+        SpeechSynthesizer tts;
+        Boolean ttsOn = false;
+        QuestionResponse questionResponse = new QuestionResponse();
+
         public ChatForm(MainMenu mainForm)
         {
             InitializeComponent();
@@ -29,9 +35,91 @@ namespace StupidBot.Views
         private void btnSend_Click(object sender, EventArgs e)
         {
             String textSend = textBoxSend.Text;
-            listViewChat.Items.Add(textSend);
+            Random rnd = new Random();
+
+            RichTextBox textUser = new RichTextBox
+            {
+                Multiline = true,
+                ReadOnly = true,
+                Text = textSend,
+                BackColor = Color.DodgerBlue,
+                ForeColor = Color.White,
+                SelectionAlignment = HorizontalAlignment.Right,
+
+            };
+            Size size = TextRenderer.MeasureText(textUser.Text, textUser.Font);
+            textUser.Width = size.Width + 10;
+            textUser.Height = size.Height + 10;
+            //textUser.Location = new Point(listViewChat.Width, 0);
+            //textUser.Anchor = AnchorStyles.None;
+
+            listViewChat.Controls.Add(textUser);
+
             textBoxSend.Clear();
             Log.StupidLogger.Info("Vous avez bien envoyer le message !! youpiiiii");
+
+            string response = questionResponse.GetResponse(textSend);
+
+
+            int time = rnd.Next(5000, 8000);
+            if (response.Contains(".gif"))
+            {
+                PictureBox pb1 = new PictureBox
+                {
+                    Image = Image.FromFile("Resources/" + response),
+                    MaximumSize = new Size(700, 700),
+                    SizeMode = PictureBoxSizeMode.AutoSize
+                };
+                listViewChat.Controls.Add(pb1);
+                listViewChat.ScrollControlIntoView(pb1);
+            }
+
+            if (response.Contains(".wav"))
+            {
+                RichTextBox textBot = new RichTextBox
+                {
+                    Width = 300,
+                    Multiline = true,
+                    ReadOnly = true,
+                    Text = "C'est parti !",
+                    BackColor = Color.WhiteSmoke,
+                    ForeColor = Color.Black
+                };
+
+                size = TextRenderer.MeasureText(textBot.Text, textBot.Font);
+                textBot.Width = size.Width + 10;
+                textBot.Height = size.Height + 10;
+                listViewChat.Controls.Add(textBot);
+                listViewChat.ScrollControlIntoView(textBot);
+                if (ttsOn) tts.SpeakAsync(textBot.Text);
+
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+                player.SoundLocation = "Resources/" + response;
+                player.Play();
+            }
+
+            if (!response.Contains(".wav") && !response.Contains(".gif"))
+            {
+                RichTextBox textBot = new RichTextBox
+                {
+                    Width = 300,
+                    Multiline = true,
+                    ReadOnly = true,
+                    Text = response,
+                    BackColor = Color.WhiteSmoke,
+                    ForeColor = Color.Black
+                };
+
+                size = TextRenderer.MeasureText(textBot.Text, textBot.Font);
+                textBot.Width = size.Width + 10;
+                textBot.Height = size.Height + 10;
+                listViewChat.Controls.Add(textBot);
+                listViewChat.ScrollControlIntoView(textBot);
+                if (ttsOn) tts.SpeakAsync(textBot.Text);
+
+            }
+
+
         }
 
         private void textBoxSend_TextChanged(object sender, EventArgs e)
@@ -41,15 +129,36 @@ namespace StupidBot.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bool[] H = new bool[5] { true, false, true, false, true };
             try
             {
-                H[6] = true; throw new StupidException();
-            } catch (StupidException ex)
+                var a = 2;
+                var b = 5;
+                if (a + b == a - b) Log.StupidLogger.Debug("a = " + a + " et b = " + b);
+                else throw new StupidException();
+            } catch(Exception exception)
             {
-                ex.displayError(ex);
+                MessageBox.Show("Attention faut pas pousser mémé dans les orties...", "Erreur personnalisée");
+                Log.StupidLogger.Error("CE BOUTON GENERE UNE EXCEPTION! Message d'erreur: "+ exception.Message);
             }
-            
+        }
+
+        private void tts_On(object sender, EventArgs e)
+        {
+            Log.StupidLogger.Debug(e.ToString());
+            Log.StupidLogger.Debug(sender.ToString());
+            if(sender.ToString().Contains("CheckState: 1"))
+            {
+                tts = new SpeechSynthesizer();
+                tts.SetOutputToDefaultAudioDevice();
+                tts.Volume = 100;
+                tts.SpeakAsync("C'est l'heure de jouer");
+                ttsOn = true;
+
+            } else
+            {
+                ttsOn = false;
+                tts.Dispose();
+            }
         }
     }
 }

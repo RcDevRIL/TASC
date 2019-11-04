@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StupidBot.Models
 {
+    /// <author>
+    ///     The Amazing Stupid Company, Inc.
+    /// </author>
     public class StupidException : Exception
     {
         DateTime errorTime;
@@ -21,9 +20,14 @@ namespace StupidBot.Models
             errorTime = DateTime.Now;
         }
 
+        public StupidException(string message, Exception inner) : base(message, inner)
+        {
+            errorTime = DateTime.Now;
+        }
+
         public void displayError(StupidException ex)
         {
-            Console.WriteLine(ex.StackTrace);
+            Log.StupidLogger.Error(ex.GetType() + " " + ex.Message + " " + ex.StackTrace);
         }
     }
 }

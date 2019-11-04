@@ -10,14 +10,14 @@ namespace StupidBot_Test
     [TestClass]
     public class UnitTest_Bot
     {
-        List<QuestionReponse> listQuestionsReponses = new List<QuestionReponse>
+        List<QuestionResponse> listQuestionsReponses = new List<QuestionResponse>
         {
-            new QuestionReponse() {Question = "Wesh alors ?", Reponse = "On est pas tout seul"},
-            new QuestionReponse() {Question = "Wesh alors ?", Reponse = "TG Jul"},
-            new QuestionReponse() {Question = "Qui es tu ?", Reponse = "Je suis le grand Manitout"},
-            new QuestionReponse() {Question = "Pose moi une énigme", Reponse = "Qu'est ce qui est petit et marron ?"},
-            new QuestionReponse() {Question = "Un marron", Reponse = "Putain il est fort ce con !"},
-            new QuestionReponse() {Question = "Omae wa mou shinderiu", Reponse = "Nani !?"}
+            new QuestionResponse() {Question = "Wesh alors ?", Reponse = "On est pas tout seul"},
+            new QuestionResponse() {Question = "Wesh alors ?", Reponse = "TG Jul"},
+            new QuestionResponse() {Question = "Qui es tu ?", Reponse = "Je suis le grand Manitout"},
+            new QuestionResponse() {Question = "Pose moi une énigme", Reponse = "Qu'est ce qui est petit et marron ?"},
+            new QuestionResponse() {Question = "Un marron", Reponse = "Putain il est fort ce con !"},
+            new QuestionResponse() {Question = "Omae wa mou shinderiu", Reponse = "Nani !?"}
 
         };
 
@@ -38,11 +38,25 @@ namespace StupidBot_Test
         }
 
         [TestMethod]
+        public void TestReadResponseLowerAndUpper()
+        {
+            var input = "Qui es tu ?";
+            var input2 = "QUI es Tu ?";
+
+            QuestionResponse test = new QuestionResponse();
+
+            string response = test.GetResponse(input);
+            string response2 = test.GetResponse(input2);
+
+            Assert.IsTrue(response == response2);
+        }
+
+        [TestMethod]
         public void AddEntry()
         {
             QuestionResponse test = new QuestionResponse();
 
-            test.AddResponse("test to add", "response added");
+            test.AddQuestionResponse("test to add", "response added");
 
             string newResponse = test.GetResponse("test to add");
             Assert.IsTrue(newResponse == "response added");
@@ -69,20 +83,14 @@ namespace StupidBot_Test
 
             if (response == "Je ne saisi pas vos insinuations...")
             {
-                string input2 = "konichawa";
+                string input2 = "konichiwa";
 
-                test.AddResponse(input, input2);
+                test.ModifyResponse(input, input2);
             }
 
             string newReponse = test.GetResponse(input);
 
-            Assert.IsTrue(newReponse == "konichawa");
-        }
-
-        [TestMethod]
-        public void LoadGif()
-        {
-
+            Assert.IsTrue(newReponse == "konichiwa");
         }
     }
 }
