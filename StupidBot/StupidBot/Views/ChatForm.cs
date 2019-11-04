@@ -128,6 +128,20 @@ namespace StupidBot.Views
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var a = 2;
+                var b = 5;
+                if (a + b == a - b) Log.StupidLogger.Debug("a = " + a + " et b = " + b);
+                else throw new StupidException();
+            } catch(Exception exception)
+            {
+                Log.StupidLogger.Error("CE BOUTON GENERE UNE EXCEPTION! Message d'erreur: "+ exception.Message);
+            }
+        }
     }
 }
 
