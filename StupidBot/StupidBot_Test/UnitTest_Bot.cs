@@ -110,11 +110,5 @@ namespace StupidBot_Test
 
             Assert.IsTrue(newReponse == "konichiwa");
         }
-
-        [TestMethod]
-        public void LoadGif()
-        {
-            
-        }
     }
 }
