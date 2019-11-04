@@ -84,5 +84,10 @@ namespace StupidBot.Views
             
             add.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
