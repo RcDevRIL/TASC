@@ -38,9 +38,7 @@ namespace StupidBot.Views
         {
             String textSend = textBoxSend.Text;
             tts.SpeakAsync(textSend);
-            listViewChat.Items.Add(textSend);
             Random rnd = new Random();
-            string textSend = textBoxSend.Text;
 
             RichTextBox textUser = new RichTextBox
             {

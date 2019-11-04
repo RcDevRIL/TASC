@@ -40,7 +40,7 @@ namespace StupidBot.Views
         private void button1_Click(object sender, EventArgs e)
         {
             QuestionResponse questionResponse = new QuestionResponse();
-            questionResponse.AddResponse(textBoxQuestion.Text, textBoxReponse.Text);
+            questionResponse.AddQuestionResponse(textBoxQuestion.Text, textBoxReponse.Text);
         }
     }
 }
