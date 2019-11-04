@@ -37,37 +37,19 @@ namespace StupidBot_Test
             Assert.IsTrue(response == "Je suis le grand Manitout");
         }
 
+        [TestMethod]
+        public void TestReadResponseLowerAndUpper()
+        {
+            var input = "Qui es tu ?";
+            var input2 = "QUI es Tu ?";
 
-        //[TestMethod]
-        //public void AddQuestion()
-        //{
-        //    string input = "test ajout question";
+            QuestionResponse test = new QuestionResponse();
 
-        //    QuestionResponse test = new QuestionResponse();
+            string response = test.GetResponse(input);
+            string response2 = test.GetResponse(input2);
 
-        //    test.AddQuestion(input);
-
-        //    string response = test.GetResponse(input);
-
-        //    Assert.IsTrue(response == "");
-        //}
-
-        //[TestMethod]
-        //public void AddResponse()
-        //{
-        //    string input = "test ajout question";
-
-        //    string input2 = "test modif reponse";
-
-        //    QuestionResponse test = new QuestionResponse();
-
-        //    test.ModifyResponse(input, input2);
-
-        //    string response = test.GetResponse(input);
-
-        //    Assert.IsTrue(response == input2);
-
-        //}
+            Assert.IsTrue(response == response2);
+        }
 
         [TestMethod]
         public void AddEntry()
