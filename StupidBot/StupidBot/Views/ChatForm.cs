@@ -137,6 +137,7 @@ namespace StupidBot.Views
                 else throw new StupidException();
             } catch(Exception exception)
             {
+                MessageBox.Show("Attention faut pas pousser mémé dans les orties...", "Erreur personnalisée");
                 Log.StupidLogger.Error("CE BOUTON GENERE UNE EXCEPTION! Message d'erreur: "+ exception.Message);
             }
         }

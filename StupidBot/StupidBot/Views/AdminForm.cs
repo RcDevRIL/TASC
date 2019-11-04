@@ -1,13 +1,6 @@
 ﻿using StupidBot.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StupidBot.Views
@@ -80,14 +73,14 @@ namespace StupidBot.Views
 
         private void AddQandA_Click(object sender, EventArgs e)
         {
-            Form add = new Form();
-            
+            Form add = new Form();            
             add.ShowDialog();
+            MessageBox.Show("Fonctionnalité non implémentée", "Erreur");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Fonctionnalité non implémentée", "Erreur");
         }
     }
 }

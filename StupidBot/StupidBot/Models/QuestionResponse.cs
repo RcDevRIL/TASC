@@ -1,20 +1,16 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StupidBot.Models
 {
-    
+    /// <author>
+    ///     The Amazing Stupid Company, Inc.
+    /// </author>
     public class QuestionResponse
     {
-        //private string jsonPath = "C:/code/TASC/StupidBot/StupidBot/Resources/QuestionReponse.json";
-        //private string jsonPath = @"Resources/QuestionReponse.json";
         private string jsonPath = AppDomain.CurrentDomain.BaseDirectory + "/Resources/QuestionReponse.json";
         public string Question { get; set; }
         public string Reponse { get; set; }
@@ -32,7 +28,6 @@ namespace StupidBot.Models
             string file = File.ReadAllText(jsonPath);
             List<QuestionResponse> all = JsonConvert.DeserializeObject<List<QuestionResponse>>(file);
             return all;
-
         }
 
         public string GetResponse(string question)
@@ -66,10 +61,8 @@ namespace StupidBot.Models
                     AddQuestion(question);
                     reponse = "Je ne saisi pas vos insinuations...";
                     var listtest = FindAllQuestionsResponses();
-                }
-               
+                }              
             }
-
             return reponse;
         }
 
@@ -81,7 +74,6 @@ namespace StupidBot.Models
             var convertedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
 
             File.WriteAllText(jsonPath, convertedJson);
-
         }
         /*
         public void ModifyResponse(string question, string reponse)
