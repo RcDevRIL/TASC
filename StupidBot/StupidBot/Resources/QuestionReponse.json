@@ -22,5 +22,9 @@
   {
     "Question": "Qui es tu ?",
     "Reponse": "Je suis le grand Manitout"
+  },
+  {
+    "Question": "Chante moi une chanson",
+    "Reponse": "padoru_padoru.wav"
   }
 ]

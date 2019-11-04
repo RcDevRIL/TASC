@@ -37,7 +37,6 @@ namespace StupidBot.Views
         private void btnSend_Click(object sender, EventArgs e)
         {
             String textSend = textBoxSend.Text;
-            tts.SpeakAsync(textSend);
             Random rnd = new Random();
 
             RichTextBox textUser = new RichTextBox
@@ -77,7 +76,32 @@ namespace StupidBot.Views
                 listViewChat.ScrollControlIntoView(pb1);
             }
 
-            else
+            if (response.Contains(".wav"))
+            {
+                RichTextBox textBot = new RichTextBox
+                {
+                    Width = 300,
+                    Multiline = true,
+                    ReadOnly = true,
+                    Text = "C'est parti !",
+                    BackColor = Color.WhiteSmoke,
+                    ForeColor = Color.Black
+                };
+
+                size = TextRenderer.MeasureText(textBot.Text, textBot.Font);
+                textBot.Width = size.Width + 10;
+                textBot.Height = size.Height + 10;
+                listViewChat.Controls.Add(textBot);
+                listViewChat.ScrollControlIntoView(textBot);
+                tts.SpeakAsync(textBot.Text);
+
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+                //player.SoundLocation = "Resources/" + response;
+                player.SoundLocation = "C:/code/TASC/StupidBot/StupidBot/Resources/padoru_padoru.wav";
+                player.Play();
+            }
+
+            if (!response.Contains(".wav") && !response.Contains(".gif"))
             {
                 RichTextBox textBot = new RichTextBox
                 {
@@ -94,7 +118,10 @@ namespace StupidBot.Views
                 textBot.Height = size.Height + 10;
                 listViewChat.Controls.Add(textBot);
                 listViewChat.ScrollControlIntoView(textBot);
+                tts.SpeakAsync(textBot.Text);
+
             }
+
 
         }
 
