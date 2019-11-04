@@ -134,7 +134,9 @@
     <Content Include="Resources\kaamelott_merlin_marron.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\padoru_padoru.wav" />
+    <Content Include="Resources\padoru_padoru.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\raconte_moi_une_histoire.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

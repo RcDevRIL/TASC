@@ -96,8 +96,8 @@ namespace StupidBot.Views
                 tts.SpeakAsync(textBot.Text);
 
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer();
-                //player.SoundLocation = "Resources/" + response;
-                player.SoundLocation = "C:/code/TASC/StupidBot/StupidBot/Resources/padoru_padoru.wav";
+                player.SoundLocation = "Resources/" + response;
+                //player.SoundLocation = "C:/code/TASC/StupidBot/StupidBot/Resources/padoru_padoru.wav";
                 player.Play();
             }
 
