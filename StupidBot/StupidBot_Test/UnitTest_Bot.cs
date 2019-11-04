@@ -103,7 +103,7 @@ namespace StupidBot_Test
             {
                 string input2 = "konichiwa";
 
-                test.AddQuestionResponse(input, input2);
+                test.ModifyResponse(input, input2);
             }
 
             string newReponse = test.GetResponse(input);

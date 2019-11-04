@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace StupidBot.Models
 {
-
+    
     public class QuestionResponse
     {
         //private string jsonPath = "C:/code/TASC/StupidBot/StupidBot/Resources/QuestionReponse.json";
@@ -42,9 +42,20 @@ namespace StupidBot.Models
 
             string reponse = "";
 
+            if (reponses.Count > 1)
+            {
+                Random rand = new Random();
+                reponse = reponses.ElementAt(rand.Next(0, reponses.Count)).Reponse;
+            }
+
+            if (reponses.Count == 1)
+            {
+                reponse = reponses.First().Reponse;
+            }
+
             if (reponses.Count == 0)
             {
-                var test = list.Where(q => q.Question == "").ToList();
+                var test = list.Where(r => r.Reponse== "").ToList();
                 if (test.Count() != 0)
                 {
                     ModifyResponse(test.First().Question, question);
@@ -57,17 +68,6 @@ namespace StupidBot.Models
                     var listtest = FindAllQuestionsResponses();
                 }
                
-            }
-
-            if (reponses.Count == 1)
-            {
-                reponse = reponses.First().Reponse;
-            }
-
-            if (reponses.Count > 1)
-            {
-                Random rand = new Random();
-                reponse = reponses.ElementAt(rand.Next(0, reponses.Count)).Reponse;
             }
 
             return reponse;
@@ -83,7 +83,7 @@ namespace StupidBot.Models
             File.WriteAllText(jsonPath, convertedJson);
 
         }
-
+        /*
         public void ModifyResponse(string question, string reponse)
         {
             QuestionResponse questionResponse = FindAllQuestionsResponses().Where(q => q.Question == question).Where(r => r.Reponse == "").First();
@@ -96,6 +96,13 @@ namespace StupidBot.Models
             File.WriteAllText(jsonPath, convertedJson);
 
         }
+        */
+        public void ModifyResponse(string question, string reponse)
+        {
+            DeleteResponse(question, "");
+            AddQuestionResponse(question, reponse);
+        }
+
         public void AddQuestionResponse(string question, string reponse)
         {
             Console.WriteLine(jsonPath);
@@ -112,8 +119,8 @@ namespace StupidBot.Models
         {
             var list = FindAllQuestionsResponses();
             QuestionResponse questionResponse = list.Where(q => q.Question == question).Where(r => r.Reponse == reponse).FirstOrDefault();
-            //list.RemoveAll(l => l.Question == questionResponse.Question && l.Reponse == questionResponse.Reponse);
-            list.Remove(questionResponse);
+            list.RemoveAll(l => l.Question == questionResponse.Question && l.Reponse == questionResponse.Reponse);
+            //list.Remove(questionResponse);
             string convertedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
 
             File.WriteAllText(jsonPath, convertedJson);
